@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <tns:customer xmlns:tns="http://trng.xsd/customer/0.0.1" xmlns:tns1="http://trng.xsd/PaymentMethod/0.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://trng.xsd/customer/0.0.1 customer.xsd "> -->
+<tns:customer xmlns:tns="http://trng.xsd/customer/0.0.1">
+  <customerId>1</customerId>
+  <name>Kent</name>
+  <dateOfBirth>1968-04-01</dateOfBirth>
+  <annualSalary>45000.0</annualSalary>
+  <address>
+    <street>560 Marine Dr</street>
+    <city>Miami</city>
+  </address>
+  <paymentMethod>
+    <cardNumber>670980018696</cardNumber>
+    <cardName>AmEx</cardName>
+    <dateFrom>2015-05-19</dateFrom>
+    <cardType>CREDITCARD</cardType>
+  </paymentMethod>
+</tns:customer>

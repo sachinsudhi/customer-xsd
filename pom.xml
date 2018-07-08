@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>trng.xsd</groupId>
+  <artifactId>customer-xsd</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>customer-xsd</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+   
+  	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+				<extension>true</extension>
+                  <bindingDirectory>${basedir}/src/main/resources/jaxb</bindingDirectory>
+                  <bindingFiles>simple-binding.xjb</bindingFiles>
+					<!-- The schema directory or xsd files. -->
+					<sources>
+						<source>${basedir}/src/main/resources/customer.xsd</source>
+						<source>${basedir}/src/main/resources/PaymentMethod.xsd</source>
+					</sources>
+					<!-- The package in which the source files will be generated. -->
+					<packageName>trng.xsd.customer_xsd</packageName>
+					<!-- The working directory to create the generated java source files. -->
+					<outputDirectory>${basedir}/src/main/java</outputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>	
+</project>
